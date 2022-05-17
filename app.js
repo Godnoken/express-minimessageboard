@@ -3,6 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require("mongoose");
+
+const mongodbUrl = "mongodb+srv://admin:admin@express-minimessageboar.7ibwu.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose.connect(mongodbUrl, {useNewUrlParser: true, useUnifiedTopology: true});
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

@@ -7,5 +7,6 @@ block content
 
   
   each val in messages
-      each item in val
-        p= item
+      p= val.user
+      p= val.text
+      p= val.added

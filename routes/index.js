@@ -1,36 +1,40 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date()
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date()
-  }
-];
+const Message = require("../schemas/Message");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Mini Messageboard', messages: messages });
+router.get("/", async function (req, res, next) {
+  const messagesFound = await Message.find({});
+
+  try {
+    res.render("index", { title: "Mini Messageboard", messages: messagesFound });
+  }
+  catch (error) {
+    res.render("error", { title: "Error", error: error, message: error.message });
+  }
+
 });
 
 router.get("/new", (req, res, next) => {
   res.render("form", { title: "New Message" });
-})
+});
 
-router.post("/new", (req, res, next) => {
-  const message = req.body.message;
-  const name = req.body.name;
-  const date = new Date();
+router.post("/new", async (req, res, next) => {
 
-  messages.push({ text: message, user: name, added: date });
+  const messageContent = new Message({
+    user: req.body.name,
+    text: req.body.message,
+    added: new Date(),
+  });
 
-  res.redirect("/");
-})
+  try {
+    await messageContent.save();
+    res.redirect("/");
+  }
+  catch (error) {
+    res.render("error", { title: "Error", error: error, message: error.message });
+  }
+
+});
 
 module.exports = router;
