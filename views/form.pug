@@ -1,0 +1,10 @@
+extends layout 
+
+block content 
+  h1= title 
+  a(href="/") Messages
+  
+  form(method="POST" action="/new")
+    input(name="name" type="text" placeholder="Name")
+    textarea(name="message" placeholder="Write your message here..")
+    button(type="submit")= "Send"
