@@ -6,7 +6,7 @@ block content
     a(href="/") Messages
   
   div(class="messages")
-    form(method="POST" action="/new" class="message-card")
+    form(method="POST" action="/new" autocomplete="off" class="message-card")
       input(name="name" type="text" placeholder="Name" class="message-name")
       div(class="message-text-container")
         textarea(name="message" placeholder="Write your message here.." class="message-text")
