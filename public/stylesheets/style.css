@@ -1,8 +1,173 @@
+@font-face {
+  font-family: "MS Sans Serif";
+  src: url("../font/MS\ Sans\ Serif\ 8pt.ttf");
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #057D7B;
+  font-family: "MS Sans Serif";
+}
+
+p {
+  margin: 0;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 24px;
+  margin-bottom: 36px;
+  color: white;
+}
+
+.messages {
+  width: 75%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  row-gap: 48px;
+  margin-bottom: 36px;
+}
+
+.message-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #C0C0C0;
+  border: 3px #C0C0C0 solid;
+  
+}
+
+.message-card::after {
+  content: "";
+  position: absolute;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  left: -4px;
+  top: -4px;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  pointer-events: none;
+}
+
+.message-name {
+  display: flex;
+  height: 24px;
+  align-items: center;
+  padding-left: 14px;
+  padding-top: 1px;
+  background: linear-gradient(to right, #07168E, #1070C3);
+  color: white;
+}
+
+.message-text-container {
+  position: relative;
+  border-top: 2px solid #C0C0C0;
+  word-break: break-word;
+}
+
+.message-text-container::after {
+  content: "";
+  position: absolute;
+  box-shadow: inset 0px 0px 1.8px 1px rgba(0, 0, 0, 0.705);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.message-fill {
+  position: relative;
+  display: flex;
+  column-gap: 6px;
+  padding: 4px 0 4px 6px;
+  font-size: 14px;
+}
+
+.message-fill::after {
+  content: "";
+  position: absolute;
+  box-shadow: 0px 4px 1px 0px rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: 0.1px;
+  bottom: 4px;
+  left: 0;
+}
+
+.message-fill-text {
+  position: relative;
+}
+
+.message-fill-text::after {
+  content: "";
+  background: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 6px;
+}
+
+.message-text-date-container {
+  box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.51);
+}
+
+.message-text {
+  min-height: 85px;
+  width: calc(100% - 22px);
+  background-color: white;
+  border-right: 18px solid #E4E4E4;
+  padding: 4px 0 0 4px;
+  resize: vertical;
+}
+
+.message-date {
+  height: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #E4E4E4;
+  padding-left: 8px;
+  font-size: 12px;
+}
+
+.message-date::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #C0C0C0;
+  right: 0;
+  bottom: 0;
+}
+
+.message-submit {
+  width: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 2px 0;
+  margin-left: auto;
+  background-color: #C0C0C0;
+  border: 0;
+  border-left: 2px solid white;
+  border-top: 2px solid white;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+input, textarea, button {
+  font-family: "MS Sans Serif";
+  outline: 0;
 }

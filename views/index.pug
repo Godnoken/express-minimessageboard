@@ -1,12 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  a(href="/new") New message
+  header(class="header")
+    h1(class="messages-title")= title
+    a(href="/new") New message
 
-  
-  each val in messages
-      p= val.user
-      p= val.text
-      p= val.added
+  div(class="messages")
+    each val in messages
+      div(class="message-card")
+        p(class="message-name")= val.user
+        div(class="message-text-container")
+          div(class="message-fill")
+            p(class="message-fill-text") Quote
+            p(class="message-fill-text") Edit
+            p(class="message-fill-text") Delete
+          p(class="message-text")= val.text
+          p(class="message-date")= val.added

@@ -1,10 +1,13 @@
 extends layout 
 
 block content 
-  h1= title 
-  a(href="/") Messages
+  header(class="header")
+    h1= title 
+    a(href="/") Messages
   
-  form(method="POST" action="/new")
-    input(name="name" type="text" placeholder="Name")
-    textarea(name="message" placeholder="Write your message here..")
-    button(type="submit")= "Send"
+  div(class="messages")
+    form(method="POST" action="/new" class="message-card")
+      input(name="name" type="text" placeholder="Name" class="message-name")
+      div(class="message-text-container")
+        textarea(name="message" placeholder="Write your message here.." class="message-text")
+        button(type="submit" class="message-submit")= "OK"
