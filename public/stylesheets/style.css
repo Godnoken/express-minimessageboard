@@ -13,7 +13,7 @@ p {
 }
 
 a {
-  color: white;
+  color: black;
 }
 
 .header {
@@ -23,6 +23,10 @@ a {
   justify-content: center;
   row-gap: 24px;
   margin-bottom: 36px;
+  color: white;
+}
+
+.header-link {
   color: white;
 }
 

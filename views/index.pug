@@ -3,7 +3,7 @@ extends layout
 block content
   header(class="header")
     h1(class="messages-title")= title
-    a(href="/new") New message
+    a(href="/new" class="header-link") New message
 
   div(class="messages")
     each val in messages
@@ -14,5 +14,5 @@ block content
             p(class="message-fill-text") Quote
             p(class="message-fill-text") Edit
             p(class="message-fill-text") Delete
-          p(class="message-text")= val.text
+          p(class="message-text") !{val.text}
           p(class="message-date")= val.added

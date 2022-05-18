@@ -3,7 +3,7 @@ extends layout
 block content 
   header(class="header")
     h1= title 
-    a(href="/") Messages
+    a(href="/" class="header-link") Messages
   
   div(class="messages")
     form(method="POST" action="/new" autocomplete="off" class="message-card")
