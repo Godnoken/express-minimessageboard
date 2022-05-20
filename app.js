@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose");
 
-const mongoDBUrl = "mongodb+srv://admin:admin@express-minimessageboar.7ibwu.mongodb.net/?retryWrites=true&w=majority";
+const mongoDBUrl = "mongodb://127.0.0.1:8000";
 var mongoDB = process.env.MONGODB_URI || mongoDBUrl;
 
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
